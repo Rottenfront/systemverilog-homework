@@ -24,9 +24,19 @@ module xor_gate_using_mux
     output o
 );
 
-  // Task:
-  // Implement xor gate using instance(s) of mux,
-  // constants 0 and 1, and wire connections
 
+    logic nota;
+    mux mux1 (
+        .d0(1),
+        .d1(0),
+        .sel(a),
+        .y(nota)
+    );
+    mux mux2 (
+        .d0(a),
+        .d1(nota),
+        .sel(b),
+        .y(o)
+    );
 
 endmodule

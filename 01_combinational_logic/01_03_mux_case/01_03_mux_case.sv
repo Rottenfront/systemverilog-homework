@@ -28,9 +28,11 @@ module mux_4_1
   output logic [3:0] y
 );
 
-  // Task:
-  // Using code for mux_2_1 as an example,
-  // write code for 4:1 mux using the "case" statement
-
-
+always_comb
+    case (sel)
+        0: y = d0;
+        1: y = d1;
+        2: y = d2;
+        default: y = d3;
+    endcase
 endmodule
